@@ -1,8 +1,16 @@
 # WoW Forever AI Exporter
 
-Save information about your WoW Forever character so your desktop AI can read it. Choose which categories to export, either automatically at regular intervals or manually.
+The WoW Forever AI Exporter lets you export your character’s data to a cache file managed by WoW. You can then Alt+Tab to a desktop AI client, such as ChatGPT or Claude, or keep it open alongside WoW to ask questions using regularly updated information about your character.
 
-The addon provides a prompt you can paste into an AI client with access to your computer. The prompt explains how to find your character’s snapshot in a cache file managed by WoW and decode it using the included PowerShell script. Your AI client needs permission to read local files and run PowerShell commands.
+Some addons provide an in-game AI chat interface that requires an API key. WoW Forever AI Exporter works with your desktop AI client and does not require an API key. The addon includes a PowerShell decoder to extract your character’s data from the cache file, and the data is formatted for efficient AI token usage. Other addons require you to copy and paste data between your game and your AI client. This addon automates that process.
+
+After installing the addon, open its settings to choose which data categories to export and how often to export them. The default settings—automatic exports every minute with all categories enabled—are a good starting point. Enter `/exporter` to open the settings, or `/exporter now` to export manually.
+
+The addon provides a prompt you can select, copy, and paste into your desktop AI client. If the client can access your local files and run PowerShell commands, it can use the included decoder to read your character’s data and answer questions about it.
+
+If you experience disruptive stuttering during exports, increase the interval between exports or switch to manual exports.
+
+If you disconnect immediately after an export, the export may be too large for WoW’s cache to handle. Try reducing the number of enabled data categories. The author observed disconnects with exports of approximately 40,000 bytes.
 
 ![AI Exporter settings and export categories](assets/exporter-settings.png)
 
