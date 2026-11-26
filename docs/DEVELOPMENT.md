@@ -90,6 +90,36 @@ The reader accepts snapshot schemas 1 through 5. Check the schema before reading
 category fields. A missing section means the information is unavailable.
 See the [export format](../EXPORT_FORMAT.md) for field definitions.
 
+## Publishing a release ZIP
+
+The **Release ZIP** GitHub Actions workflow builds from a version tag, runs the
+full test suite, and packages only the addon runtime files and license notices.
+It checks version consistency, rejects installed local path hints, verifies ZIP
+contents, and calculates SHA-256. Publishing uses GitHub's built-in workflow
+token; no personal access token or local Windows sign-in is needed.
+
+For a new release:
+
+1. Update the version in both TOC files, `Exporter.lua`, `package.json`, and both
+   root version fields in `package-lock.json`. Update the current version in the
+   README and this guide too. Commit and push the reviewed public source.
+2. Create and push the matching tag, for example `v1.0.1`. The tagged commit must
+   contain the release workflow. A tag push publishes automatically after tests.
+3. Open **Actions → Release ZIP** and check that both jobs passed. The release
+   contains `Exporter-<version>.zip`, with SHA-256 in the release notes. The final
+   step downloads the public ZIP without authentication and checks its hash.
+
+For a dry run, choose **Actions → Release ZIP → Run workflow**, select `main`,
+enter an existing version tag, and leave **Publish after testing** unchecked.
+This saves the verified ZIP and checksum as an Actions artifact for 14 days and
+does not change any release. Manual runs can build tags created before the
+workflow existed. Check **Publish after testing** only when ready to publish.
+
+Reruns may resume a draft created by the workflow. Existing matching assets are
+reused; conflicting assets and published releases missing their ZIP are never
+overwritten. Do not move an existing release tag: publish a new version instead.
+The original 1.0.0 ZIP predates automated packaging and retains its original hash.
+
 ## Contributing and QA
 
 Use synthetic data in tests. Keep character data, account paths and screenshots
