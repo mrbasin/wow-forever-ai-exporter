@@ -1,18 +1,12 @@
 # WoW Forever AI Exporter
 
-Save information about your WoW Forever character so you can share it with an AI
-and ask questions about your gear, talents, quests, and more.
+Save information about your WoW Forever character so your desktop AI can read it. Choose which categories to export, either automatically at regular intervals or manually.
 
-An **addon** is a small extra feature you install inside the game. This addon
-makes a **snapshot**: a copy of your character's information at a particular time.
-It does not send that information to an AI automatically.
+The addon provides a prompt you can paste into an AI client with access to your computer. The prompt explains how to find your character’s snapshot in a cache file managed by WoW and decode it using the included PowerShell script. Your AI client needs permission to read local files and run PowerShell commands.
 
-This project is for **WoW Forever on Windows**. Other versions of WoW are not
-currently supported.
+![AI Exporter settings and export categories](assets/exporter-settings.png)
 
-**Experimental.** Disconnects have occurred during exports, but the cause and a
-reliable safe size limit have not been established. If this happens, disable
-AI Exporter in WoW's AddOns menu before logging back in.
+![AI Exporter snapshot status and AI prompt controls](assets/exporter-export-status.png)
 
 ## 1. Install the addon
 
@@ -137,6 +131,26 @@ and run the decoder again.
 reloading, or disabling exporting can remove the snapshot from the game file.
 The converted `.json` copy stays available after you leave the game.
 
+## In-game commands
+
+Press **Enter** in WoW, type a command below, and press **Enter** again.
+These are in-game chat commands.
+
+| Command | What it does |
+| --- | --- |
+| `/exporter` | Opens the AI Exporter settings. |
+| `/exporter now` | Requests an export and prints its status. Exporting must be enabled. Also retries after an export failure. |
+| `/exporter status` | Prints the addon version and current export status in chat. |
+| `/exporter path` | Prints the character export source path or paths. If no local path is configured, shows a template path with placeholders. |
+| `/exporter on` | Enables exporting and queues an export using your saved settings. |
+| `/exporter off` | Disables exporting and cancels any pending export. Previously saved files may still contain earlier snapshots. |
+
+`/exporter now` follows the same combat, action-bar, and 30-second minimum
+interval rules as **Export now**. WoW may delay writing the snapshot to disk.
+Turning exporting on or off preserves your periodic export and category settings.
+To change the interval, periodic exports, or included categories, use `/exporter`
+to open the settings.
+
 ## If something goes wrong
 
 | Problem | What to do |
@@ -147,9 +161,6 @@ The converted `.json` copy stays available after you leave the game.
 | It says the export is too large. | Uncheck categories you do not need. The last successful snapshot is kept until a new one succeeds. |
 | The file is missing, old, or cannot be converted. | See the [file-sharing help](docs/SHARING_WITH_AI.md#if-something-goes-wrong). |
 | WoW disconnects during exporting. | Disable **AI Exporter** in the AddOns menu before logging back in. Keep the error message when reporting the problem. |
-
-To stop exporting during play, type `/exporter off`. To turn it back on, type
-`/exporter on`. For a quick status check, type `/exporter status`.
 
 ## More details, if you need them
 
