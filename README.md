@@ -139,6 +139,23 @@ and run the decoder again.
 reloading, or disabling exporting can remove the snapshot from the game file.
 The converted `.json` copy stays available after you leave the game.
 
+### Things to ask your AI
+
+After sharing the addon’s prompt, try questions like these. Ask your AI to use your latest export and verify WoW Forever-specific details when it needs information beyond your character’s data.
+
+- **Plan your next session** — “I have 30 minutes to play. Based on my location, quests, inventory, and professions, suggest three options: one focused on leveling, one on exploration, and one on getting organized.”
+- **Find unfinished quest stories** — “Compare my active quests with my completed quest history. Which unfinished chains or follow-up quests are worth investigating?”
+- **Prepare for a dungeon** — “Help me prepare for [dungeon] as a [role]. Which quests should I collect, which spells should I have ready, and what weaknesses in my gear or build should I address?”
+- **Find overlooked upgrades** — “Compare my equipped gear with the items in my bags. Am I carrying anything I should equip? Explain the tradeoffs for my class and playstyle.”
+- **Explore talent choices** — “Explain the strengths and weaknesses of my current talent build. Where should I spend my next few points for solo leveling while remaining useful in groups?”
+- **Discover useful spell combinations** — “Show me three useful combinations of spells and talents I already have. Explain when to use each and which spell ranks make sense.”
+- **Make room in your bags** — “Help me clean out my bags. Recommend what to keep, equip, sell, or set aside for quests and professions. Flag anything that needs checking before I sell it.”
+- **Set a profession goal** — “Based on my profession skill levels and the materials I’m carrying, suggest a useful crafting or gathering goal. Explain which recipes or additional materials I would need.”
+- **Test your knowledge of your character** — “Quiz me with practical situations involving spells I know, talents I have, and items I’m carrying. Ask one question at a time and explain how my build affects the answer.”
+- **Create a personal challenge** — “Give me three optional challenges suited to my level, equipment, and current zone, such as completing a quest with a limited spell selection or working toward an unusual gear setup.”
+- **Compare your progress** — “Compare this export with the previous snapshot I shared. Summarize changes to my level, equipment, talents, quests, and inventory, then suggest what to focus on next.”
+- **Tell your character’s story** — “Write a short, spoiler-free adventurer’s journal inspired by my current zone, active quests, talents, and equipment. Keep the character details accurate and make the narration entertaining.”
+
 ## In-game commands
 
 Press **Enter** in WoW, type a command below, and press **Enter** again.
