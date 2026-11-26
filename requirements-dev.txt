@@ -1,0 +1,2 @@
+# Offline transport verification only. The addon has no Python runtime dependency.
+cbor2==6.2.1

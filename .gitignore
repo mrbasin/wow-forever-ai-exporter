@@ -1,0 +1,12 @@
+/node_modules/
+/.venv/
+/dist/
+/backups/
+/.cache/
+/state/
+*.log
+*.zip
+__pycache__/
+*.py[cod]
+config.local.*
+.env*

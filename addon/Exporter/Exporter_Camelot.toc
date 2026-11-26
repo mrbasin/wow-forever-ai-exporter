@@ -1,0 +1,18 @@
+## Interface: 16001
+## Title: AI Exporter
+## Notes: Configurable character metadata exports.
+## Author: AI Exporter contributors
+## Version: 1.0.0
+## SavedVariables: ExporterSettings
+## SavedVariablesPerCharacter: ExporterSnapshotJSON
+LocalPaths.lua
+DataRequests.lua
+CharacterStats.lua
+Equipment.lua
+Talents.lua
+Spellbook.lua
+QuestLog.lua
+Items.lua
+Professions.lua
+Exporter.lua
+Options.lua
